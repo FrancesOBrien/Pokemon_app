@@ -14,7 +14,7 @@ const myStyle = {
         {Pokemon.map((pokemon, i) => {
           return (
             <li>
-              <a href={'/pokemon/${i}'}>
+              <a href={`/pokemon/${i}`}>
                 {pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}
               </a>
             </li>
@@ -26,5 +26,3 @@ const myStyle = {
   }
 
 module.exports = MyFirstComponent
-
-{/* <a href={`/pokemon/${i}`}>{pokemon[i].name[0].toUpperCase() + pokemon[i].name.slice(1)}</a> */}
