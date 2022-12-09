@@ -1,10 +1,22 @@
 const React = require("react");
+const newStyle = {
+  color: '#ffffff',
+  backgroundColor: '#336699',
+  fontFamily: 'Arial',
+  fontSize: '20px'
+}
+const myStyle = {
+  
+  color: '#ffffff',
+  backgroundColor: '#000000',
+  }
 
 class New extends React.Component {
   render() {
     return (
       <div>
-        <h1>Create New Pokemon!</h1>
+        <body style={newStyle}>
+        <h1 style={myStyle}>Create New Pokemon!</h1>
         <form action='/pokemon' method='POST'>
           Name: <input type='text' name='name' />
           <br />
@@ -12,6 +24,7 @@ class New extends React.Component {
           <br /> 
           <input type='submit' name='' value='Add Pokemon' />
         </form>
+        </body>
       </div>
     );
   }

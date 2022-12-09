@@ -43,19 +43,19 @@ mongoose.set("strictQuery", true)
   app.set('view engine', 'jsx') 
   app.engine('jsx', require('express-react-views').createEngine())
 
-//   pokemon.insertMany(manyPokemons)
-//   // if database transaction succeeds
-//   .then((pokemon) => {
-//       console.log(pokemon)
-//   })
-//   // if database transaction fails
-//   .catch((error) => {
-//       console.log(error)
-//   })
-//   // close db connection either way
-//   .finally(() => {
-//       db.close()
-//   })
+  // pokemon.insertMany(manyPokemons)
+  // // if database transaction succeeds
+  // .then((pokemon) => {
+  //     console.log(pokemon)
+  // })
+  // // if database transaction fails
+  // .catch((error) => {
+  //     console.log(error)
+  // })
+  // // close db connection either way
+  // .finally(() => {
+  //     db.close()
+  // })
 //get route welcome
 app.get('/', (req, res) => {
     res.send('<h1>Welcome to the Pokemon App!</h1>')
@@ -70,7 +70,7 @@ app.get('/pokemon', (req, res) => {
     // console.log(pokemon)
     pokemon.find({}, (error, Pokemon) => {
       res.render('Index', {
-        Pokemon: Pokemon, // getting all fruits from db to pass as props
+        Pokemon: Pokemon,
       })
     })
   })
@@ -90,9 +90,6 @@ app.post('/pokemon', (req, res) => {
 // edit--also disregard for now
 
 //show
-// app.get('/pokemon/:id', (req, res) => {
-//     res.render('Show', {Pokemon: pokemon[req.params.id]})
-// })
 app.get("/pokemon/:id", function (req, res) {
     pokemon.findById(req.params.id, (err, foundPokemon) => {
       res.render("Show", {
