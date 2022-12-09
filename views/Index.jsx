@@ -4,7 +4,7 @@ const myStyle = {
     backgroundColor: '#000000',
   };
 
-  class MyFirstComponent extends React.Component {
+  class Index extends React.Component {
     render() {
     const { Pokemon } = this.props
     return (
@@ -14,15 +14,16 @@ const myStyle = {
         {Pokemon.map((pokemon, i) => {
           return (
             <li>
-              <a href={`/pokemon/${i}`}>
+              <a href={`/pokemon/${pokemon.id}`}>
                 {pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}
               </a>
             </li>
           )
         })}
       </ul>
+      <a href={'/pokemon/new'}>Create New</a>
       </div>)
     }
   }
 
-module.exports = MyFirstComponent
+module.exports = Index
