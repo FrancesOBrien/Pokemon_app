@@ -20,7 +20,7 @@ class New extends React.Component {
         <form action='/pokemon' method='POST'>
           Name: <input type='text' name='name' />
           <br />
-          Image: <input type='text' name='image' />
+          {/* Image: <input type='text' name='image' /> */}
           <br /> 
           <input type='submit' name='' value='Add Pokemon' />
         </form>
@@ -31,3 +31,4 @@ class New extends React.Component {
 }
 
 module.exports = New;
+

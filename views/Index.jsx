@@ -13,18 +13,26 @@ const pageStyle = {
 
   class Index extends React.Component {
     render() {
-    const { Pokemon } = this.props
+    const { pokemon } = this.props
     return (
      <div>
       <h1 style={myStyle}>See All The Pokemon</h1>
       <body style={pageStyle}>
       <ul>
-        {Pokemon.map((pokemon, i) => {
+        {pokemon.map((pokemon, i) => {
           return (
             <li>
               <a href={`/pokemon/${pokemon.id}`}>
                 {pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}
               </a>
+              <form 
+        action={`/pokemon/${pokemon.id}?_method=DELETE`} 
+        method="POST">
+          <input 
+            type="submit" 
+            value="DELETE"
+          />
+      </form>
             </li>
           )
         })}
